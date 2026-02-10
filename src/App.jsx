@@ -3,6 +3,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import { Toaster } from "react-hot-toast";
+import React from "react";
 
 export default function App() {
   return (
