@@ -1,8 +1,10 @@
 import axios from "axios";
 import { toast } from "react-hot-toast";
 
+const BASE_URL = import.meta.env.VITE_API_URL; // ⭐ env based
+
 const api = axios.create({
-  baseURL: "https://smartdeskserver.onrender.com/api",
+  baseURL: BASE_URL,
 });
 
 
@@ -48,8 +50,9 @@ api.interceptors.response.use(
       try {
         const refreshToken = localStorage.getItem("refreshToken");
 
+        // ⭐ use SAME baseURL (not localhost)
         const res = await axios.post(
-          "http://localhost:5000/api/auth/refresh",
+          `${BASE_URL}/auth/refresh`,
           { refreshToken }
         );
 
