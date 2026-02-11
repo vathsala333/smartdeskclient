@@ -14,7 +14,7 @@ export default function Login() {
       setLoading(true);
 
       const res = await api.post(
-        "http://localhost:5000/api/auth/login",
+        "https://smartdeskserver.onrender.com/api/auth/login",
         { email, password }
       );
 
