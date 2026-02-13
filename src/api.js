@@ -17,7 +17,7 @@ export const logoutUser = () => {
   toast.error("Logged out");
 
   setTimeout(() => {
-    window.location.href = "/login";
+    window.location.href = "/";
   }, 800);
 };
 

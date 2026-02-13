@@ -1,31 +1,48 @@
-import React,{ useState } from "react";
+import React, { useState, useEffect } from "react";
 import api from "../api";
-
+import { useLocation, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 export default function Login() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    // Check if the registration state was passed
+    if (location.state?.registered) {
+      toast.success("Registration successful! Please login.");
+      
+      // Clear the state by replacing the current history entry with NO state
+      // This prevents the toast from showing again if the user refreshes
+      navigate("/", { replace: true, state: {} });
+    }
+  }, [location.state, navigate]);
+
   const handleLogin = async () => {
-    if (!email || !password) return;
+    if (!email || !password) {
+      toast.error("Please enter email and password");
+      return;
+    }
 
     try {
       setLoading(true);
 
-      const res = await api.post(
-        "https://smartdeskserver.onrender.com/api/auth/login",
-        { email, password }
-      );
+      // Note: Use your api instance or the full URL. 
+      // Using 'api.post' is better if you configured base URLs in your api.js
+      const res = await api.post("/auth/login", { email, password });
 
-      // ✅ store BOTH tokens (matches api.js interceptor)
       localStorage.setItem("accessToken", res.data.accessToken);
       localStorage.setItem("refreshToken", res.data.refreshToken);
 
-      window.location.href = "/dashboard";
+      toast.success("Welcome back!");
+      navigate("/dashboard");
+
     } catch (err) {
-      alert("Invalid credentials");
-      console.error(err);
+      toast.error(err.response?.data?.message || "Invalid credentials");
     } finally {
       setLoading(false);
     }
@@ -43,7 +60,7 @@ export default function Login() {
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
+          className="w-full border border-gray-300 p-3 rounded-md"
         />
 
         <input
@@ -51,13 +68,13 @@ export default function Login() {
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
+          className="w-full border border-gray-300 p-3 rounded-md"
         />
 
         <button
           onClick={handleLogin}
           disabled={loading}
-          className="w-full bg-blue-800 hover:bg-gray-900 text-white py-3 rounded-md transition disabled:opacity-60"
+          className="w-full bg-blue-800 text-white py-3 rounded-md disabled:opacity-60"
         >
           {loading ? "Logging in..." : "Login"}
         </button>
@@ -65,7 +82,7 @@ export default function Login() {
         <p className="text-center text-sm text-gray-600">
           Don’t have an account?{" "}
           <span
-            onClick={() => (window.location.href = "/register")}
+            onClick={() => navigate("/register")}
             className="font-semibold cursor-pointer hover:underline"
           >
             Create Account
