@@ -57,7 +57,7 @@ SmartDesk uses Cloudflare AI (LLaMA 3) to:
 
 ### 🤖 AI Automated Reply
 ![AI Reply](./screenshots/AIDashboard.png)
-
+screenshot/AIDashboard.png
 ---
 
 ## 🛠 Tech Stack
