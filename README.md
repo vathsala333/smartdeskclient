@@ -43,11 +43,13 @@ SmartDesk uses Cloudflare AI (LLaMA 3) to:
 
 ### 🔐 Login Page
 ./screenshots/login.png
-
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/smartdeskclient/blob/main/screenshot/AIDashboard.png" width="550px">
+</p>
 ### 📝 Register Page
 ![Register](./screenshots/Registration.png)
 ![Register](./screenshots/RegistrationSuccessfull.png)
-https://github.com/vathsala333/smartdeskclient/blob/main/screenshot/AIDashboard.png
+https://github.com/vathsala333/
 
 ### 📊 Dashboard
 ![Dashboard](./screenshots/Dashboard.png)
