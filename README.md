@@ -1,66 +1,62 @@
-SmartDesk AI — Intelligent Support Ticket System (Frontend)
+# SmartDesk AI — Intelligent Support Ticket System (Frontend)
 
 SmartDesk AI is an intelligent customer support platform that automates ticket classification and response generation using AI.
-This frontend provides a clean, modern dashboard for users to create, track, and manage support tickets efficiently.
+This frontend provides a clean and modern dashboard for users to create, track, and manage support tickets efficiently.
 
-The system reduces manual workload by using AI to classify tickets, set priorities, and generate initial replies.
+The system reduces manual workload by using AI to classify tickets, set priorities, and generate initial responses.
 
-🌐 Live Demo
-Component	Link
-Frontend (Netlify)	https://smartdeskclient.netlify.app
+---
 
-Backend API	https://smartdeskserver.onrender.com
-🧠 AI Capabilities
+## 🌐 Live Demo
+
+| Component          | Link                                 |
+| ------------------ | ------------------------------------ |
+| Frontend (Netlify) | https://smartdeskclient.netlify.app  |
+| Backend API        | https://smartdeskserver.onrender.com |
+
+---
+
+## 🚀 Features
+
+* Secure authentication system
+* Create and manage support tickets
+* AI-powered ticket classification
+* Automated AI support replies
+* Real-time ticket updates
+* Logout and session handling
+* Clean and responsive dashboard UI
+* Token-based authentication with refresh flow
+* Deployed production frontend
+
+---
+
+## 🤖 AI Capabilities
 
 SmartDesk AI uses Cloudflare AI (LLaMA 3) to:
 
-Classify tickets automatically
+* Automatically classify support tickets
+* Detect priority and sentiment
+* Generate first AI-based support response
+* Improve customer support efficiency
+* Reduce manual triaging workload
 
-Detect priority and sentiment
+---
 
-Generate first AI support response
+## 🛠 Tech Stack
 
-Improve customer support efficiency
+* React.js
+* Axios
+* Context API
+* JWT Authentication
+* Cloudflare AI Integration
+* CSS / Responsive UI
+* Netlify Deployment
 
-Reduce manual triaging work
+---
 
-⚙️ Tech Stack
+## 📂 Project Structure
 
-React.js
-
-Axios
-
-Context API
-
-JWT Authentication
-
-Cloudflare AI Integration
-
-CSS / Modern UI
-
-Netlify Deployment
-
-✨ Features
-
-Secure user authentication (Login / Register)
-
-AI-powered ticket classification
-
-Real-time AI support replies
-
-Ticket creation and tracking
-
-Dashboard analytics
-
-Token-based protected routes
-
-Clean and responsive UI
-
-Logout notification system
-
-Cloud deployment
-
-📂 Project Structure
+```
 smartdesk-frontend/
 │
 ├── src/
@@ -71,116 +67,116 @@ smartdesk-frontend/
 │   │   ├── Login.jsx
 │   │   ├── Register.jsx
 │   │   ├── Dashboard.jsx
-│   │   ├── AIDashboard.jsx
 │   │   └── CreateTicket.jsx
 │   ├── App.jsx
 │   └── main.jsx
+```
 
-💻 Installation (Run Locally)
+---
+
+## 📸 UI Preview
+
+### 🔐 Login Page
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/smartdeskclient/main/screenshot/Login.png" width="550px">
+</p>
+
+---
+
+### 📝 Register Page
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/smartdeskclient/main/screenshot/Register.png" width="550px">
+</p>
+
+---
+
+### ✅ Registration Success Notification
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/smartdeskclient/main/screenshot/RegistrationSuccessfull.png" width="550px">
+</p>
+
+---
+
+### 📊 Dashboard
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/smartdeskclient/main/screenshot/Dashboard.png" width="550px">
+</p>
+
+---
+
+### 🤖 AI Ticket Dashboard
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/smartdeskclient/main/screenshot/AIDashboard.png" width="550px">
+</p>
+
+---
+
+### 🔔 Logout Notification
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/smartdeskclient/main/screenshot/LoggoutNotification.png" width="550px">
+</p>
+
+---
+
+## ⚙️ Installation (Run Locally)
 
 Clone the repository:
 
+```bash
 git clone https://github.com/vathsala333/smartdeskclient.git
 cd smartdeskclient
-
+```
 
 Install dependencies:
 
+```bash
 npm install
+```
 
+Run the project:
 
-Run the app:
-
+```bash
 npm run dev
+```
 
+The app will run at:
 
-The frontend will run at:
-
+```
 http://localhost:5173
+```
 
-🔐 Authentication Flow
+---
 
-User registers and logs in
+## 🔐 Authentication Flow
 
-JWT token stored in browser
+1. User registers and logs in
+2. JWT token stored in browser
+3. Token used in API calls
+4. Refresh token ensures secure session
+5. Auto logout on token expiry
 
-Protected routes for dashboard and ticket system
+---
 
-Secure API communication
-
-🎟️ Ticket Workflow
-
-User creates support ticket
-
-AI classifies ticket automatically
-
-AI generates first support reply
-
-User continues conversation
-
-Ticket resolution and closure
-
-📸 UI Preview
-🔑 Login Page
-<p align="center"> <img src="https://raw.githubusercontent.com/vathsala333/smartdeskclient/main/screenshot/Login.png" width="550px"> </p>
-📝 Register Page
-<p align="center"> <img src="https://raw.githubusercontent.com/vathsala333/smartdeskclient/main/screenshot/Register.png" width="550px"> </p>
-✅ Registration Success
-<p align="center"> <img src="https://raw.githubusercontent.com/vathsala333/smartdeskclient/main/screenshot/RegistrationSuccessfull.png" width="550px"> </p>
-📊 Dashboard Overview
-<p align="center"> <img src="https://raw.githubusercontent.com/vathsala333/smartdeskclient/main/screenshot/Dashboard.png" width="550px"> </p>
-🤖 AI Dashboard
-<p align="center"> <img src="https://raw.githubusercontent.com/vathsala333/smartdeskclient/main/screenshot/AIDashboard.png" width="550px"> </p>
-🔔 Logout Notification
-<p align="center"> <img src="https://raw.githubusercontent.com/vathsala333/smartdeskclient/main/screenshot/LoggoutNotification.png" width="550px"> </p>
-🚀 Deployment
-
-Frontend deployed using:
-
-Netlify
-
-Backend API hosted on Render
-
-MongoDB Atlas for database
-
-🎯 Why this project?
+## 📌 Why this project?
 
 This project demonstrates:
 
-Full-stack MERN architecture
+* Full-stack MERN architecture
+* Secure authentication practices
+* AI integration in real-world SaaS
+* Production deployment
+* Modern frontend design
+* API communication and state management
+* Real-world product thinking
 
-Secure authentication
+---
 
-AI integration in real-world product
-
-Clean UI and UX design
-
-Scalable SaaS mindset
-
-Cloud deployment
-
-Industry-level project structure
-
-📈 Future Improvements
-
-Real-time chat (WebSockets)
-
-Email notifications
-
-Role-based access
-
-Multi-agent support
-
-Analytics dashboard
-
-Knowledge base automation
-
-📬 Contact
+## 📬 Contact
 
 Feel free to connect for collaboration or feedback.
-
-
-
-System design explanation of your project
-
-This will help you much more than README polishing.
