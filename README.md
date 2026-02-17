@@ -67,7 +67,7 @@ smartdesk-frontend/
 │   │   ├── Login.jsx
 │   │   ├── Register.jsx
 │   │   ├── Dashboard.jsx
-│   │   └── CreateTicket.jsx
+│   │  
 │   ├── App.jsx
 │   └── main.jsx
 ```
